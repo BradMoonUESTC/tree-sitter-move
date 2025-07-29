@@ -6,23 +6,43 @@ build-backend = "setuptools.build_meta"
 name = "tree-sitter-move"
 description = "Move grammar for tree-sitter"
 version = "0.0.1"
-keywords = ["incremental", "parsing", "tree-sitter", "move"]
+authors = [
+    {name = "Tree-sitter Move Contributors"}
+]
+keywords = ["incremental", "parsing", "tree-sitter", "move", "blockchain", "aptos"]
 classifiers = [
+  "Development Status :: 4 - Beta",
   "Intended Audience :: Developers",
   "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
   "Topic :: Software Development :: Compilers",
+  "Topic :: Software Development :: Libraries :: Python Modules",
   "Topic :: Text Processing :: Linguistic",
   "Typing :: Typed"
 ]
 requires-python = ">=3.8"
 license = {file = "LICENSE"}
 readme = "README.md"
+dependencies = [
+    "tree-sitter>=0.21.0"
+]
 
 [project.urls]
 Homepage = "https://github.com/tree-sitter/tree-sitter-move"
+Repository = "https://github.com/tree-sitter/tree-sitter-move"
+Issues = "https://github.com/tree-sitter/tree-sitter-move/issues"
 
 [project.optional-dependencies]
-core = ["tree-sitter~=0.21"]
+dev = [
+    "pytest>=6.0",
+    "build>=0.8.0",
+    "twine>=4.0.0"
+]
 
 [tool.cibuildwheel]
 build = "cp38-*"

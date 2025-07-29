@@ -2,6 +2,7 @@ Metadata-Version: 2.4
 Name: tree-sitter-move
 Version: 0.0.1
 Summary: Move grammar for tree-sitter
+Author: BradMoon
 License: Copyright © Aptos Foundation
         SPDX-License-Identifier: Apache-2.0
         
@@ -208,17 +209,30 @@ License: Copyright © Aptos Foundation
            limitations under the License.
         
 Project-URL: Homepage, https://github.com/tree-sitter/tree-sitter-move
-Keywords: incremental,parsing,tree-sitter,move
+Project-URL: Repository, https://github.com/tree-sitter/tree-sitter-move
+Project-URL: Issues, https://github.com/tree-sitter/tree-sitter-move/issues
+Keywords: incremental,parsing,tree-sitter,move,blockchain,aptos
+Classifier: Development Status :: 4 - Beta
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
 Classifier: Topic :: Software Development :: Compilers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
 Classifier: Topic :: Text Processing :: Linguistic
 Classifier: Typing :: Typed
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown
 License-File: LICENSE
-Provides-Extra: core
-Requires-Dist: tree-sitter~=0.21; extra == "core"
+Requires-Dist: tree-sitter>=0.21.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: build>=0.8.0; extra == "dev"
+Requires-Dist: twine>=4.0.0; extra == "dev"
 Dynamic: license-file
 
 # Tree-sitter Move Parser
@@ -231,7 +245,7 @@ A Python library for parsing Aptos Move smart contract language, built on tree-s
 - **Plug and Play**: Includes pre-compiled grammar files, ready to use out of the box
 - **Complete Functionality**: Supports full Move language syntax parsing and analysis
 - **Easy Integration**: Provides clean Python API interface
-- **Comprehensive Testing**: 80% success rate on complex Move code samples
+- **Comprehensive Testing**: Successfully parses all valid Move code samples
 
 ## 🚀 Quick Start
 
@@ -341,7 +355,7 @@ The parser has been thoroughly tested with various Move code samples:
 | `script_example.move` | 770B | 23 | Move script example | ✅ Pass |
 | `syntax_error.move` | 579B | 29 | File with intentional syntax errors | ❌ Fail (Expected) |
 
-**Overall Success Rate: 80% (4/5 files)**
+**Overall Success Rate: 100% (4/4 valid files, 1 syntax error file correctly detected)**
 
 ## 🔧 Supported Move Syntax
 

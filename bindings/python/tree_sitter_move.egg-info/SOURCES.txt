@@ -1,9 +1,15 @@
+Cargo.toml
 LICENSE
+MANIFEST.in
 README.md
+binding.gyp
+grammar.js
+package.json
 pyproject.toml
 setup.py
 bindings/python/tree_sitter_move/__init__.py
 bindings/python/tree_sitter_move/__init__.pyi
+bindings/python/tree_sitter_move/_binding.abi3.so
 bindings/python/tree_sitter_move/binding.c
 bindings/python/tree_sitter_move/py.typed
 bindings/python/tree_sitter_move.egg-info/PKG-INFO
@@ -12,5 +18,10 @@ bindings/python/tree_sitter_move.egg-info/dependency_links.txt
 bindings/python/tree_sitter_move.egg-info/not-zip-safe
 bindings/python/tree_sitter_move.egg-info/requires.txt
 bindings/python/tree_sitter_move.egg-info/top_level.txt
+src/grammar.json
+src/node-types.json
 src/parser.c
 src/scanner.c
+src/tree_sitter/alloc.h
+src/tree_sitter/array.h
+src/tree_sitter/parser.h
