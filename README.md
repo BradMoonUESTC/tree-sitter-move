@@ -2,6 +2,9 @@
 
 A Python library for parsing Aptos Move smart contract language, built on tree-sitter.
 
+source:
+https://github.com/BradMoonUESTC/tree-sitter-move
+
 ## ✨ Features
 
 - **Pure Python Environment**: No need to install npm, cargo or other toolchains
@@ -217,3 +220,76 @@ Apache License 2.0 - See [LICENSE](LICENSE) file for details
 ---
 
 🎉 **Enjoy using Tree-sitter Move Parser!**
+
+## 🎉 打包完成！您的tree-sitter-move包已经成功构建
+
+### ✅ 完成的工作
+
+1. **包配置完善**
+   - 更新了 `pyproject.toml` 配置文件
+   - 添加了作者信息、依赖关系、项目URL
+   - 创建了 `MANIFEST.in` 文件管理包文件
+
+2. **成功构建了两种分发包**
+   - **Wheel包** (154KB): `tree_sitter_move-0.0.1-cp38-abi3-macosx_10_13_universal2.whl`
+   - **源码包** (344KB): `tree_sitter_move-0.0.1.tar.gz`
+
+3. **质量验证通过**
+   - ✅ `twine check` 验证通过
+   - ✅ 独立环境安装测试通过
+   - ✅ 功能测试通过（可以正常解析Move代码）
+
+### 🚀 如何使用您的包
+
+#### 方法1: 本地安装（推荐）
+```bash
+<code_block_to_apply_from>
+```
+
+#### 方法2: 发布到PyPI
+```bash
+# 上传到Test PyPI（测试用）
+twine upload --repository testpypi dist/*
+
+# 上传到PyPI（正式发布）
+twine upload dist/*
+```
+
+#### 方法3: 从源码安装
+```bash
+# 开发模式安装
+pip install -e .
+```
+
+### 📋 包信息
+- **包名**: `tree-sitter-move`
+- **版本**: `0.0.1`
+- **支持Python**: 3.8+
+- **依赖**: `tree-sitter>=0.21.0`
+- **许可证**: Apache License 2.0
+
+### 🧪 使用示例
+```python
+import tree_sitter_move as ts_move
+from tree_sitter import Language, Parser
+
+# 创建解析器
+move_language = Language(ts_move.language())
+parser = Parser(move_language)
+
+# 解析Move代码
+code = "module 0x1::hello { public fun world() {} }"
+tree = parser.parse(bytes(code, "utf8"))
+
+print("✅ 解析成功!" if not tree.root_node.has_error else "❌ 解析失败")
+```
+
+### 📖 完整文档
+详细的安装和使用指南已保存在 `PACKAGING_GUIDE.md` 文件中。
+
+现在您的tree-sitter-move包已经可以：
+- ✅ 本地安装使用
+- ✅ 分发给其他用户
+- ✅ 上传到PyPI供全球用户使用
+
+**🎊 恭喜！您已经成功创建了一个可分发的Python包！**
