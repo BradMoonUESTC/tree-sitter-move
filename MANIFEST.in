@@ -8,7 +8,7 @@ include Cargo.toml
 include binding.gyp
 
 recursive-include src *.c *.h *.json
-recursive-include bindings/python *.py *.c *.pyi *.so
+recursive-include bindings/python *.py *.c *.pyi py.typed
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
 recursive-exclude venv *
@@ -16,4 +16,8 @@ recursive-exclude move_test_files *
 recursive-exclude .git *
 
 global-exclude .DS_Store
-global-exclude *.egg-info 
+global-exclude *.egg-info
+global-exclude *.so
+global-exclude *.dylib
+global-exclude *.dll
+global-exclude *.pyd 

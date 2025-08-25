@@ -1,1 +1,40 @@
 /venv
+
+# Compiled binaries
+*.so
+*.dylib
+*.dll
+*.pyd
+*.pdb
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+
+# Node artifacts
+node_modules/
+*.node
+
+# Rust artifacts
+target/
+Cargo.lock
+
+# C/C++ artifacts
+*.o
+*.a
+*.lib
+*.exe
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
